@@ -2,7 +2,7 @@
 
 **Specxy (2022)** was a marketplace for refurbished prescription eyewear, founded by **Omkar Patil** at Manipal. We bought back old specs, restored them by hand, matched them to a new owner's prescription and priced them at about a third of a new pair.
 
-**Live site:** _add your Netlify link here_
+**Live site:** https://specxy.netlify.app
 
 ![Specxy website preview](docs/preview.jpg)
 
