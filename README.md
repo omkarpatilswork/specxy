@@ -11,8 +11,8 @@
 | Result | Competition |
 | --- | --- |
 | Winner | Pitch Tank, Manipal Entrepreneurship Summit (MIT E-Cell × MUTBI) |
-| Runner-up | Hult Prize MAHE |
-| Finalist | Hult Prize Regional Summit, Dhaka |
+| 1st Runner-up | Hult Prize MAHE (Mar 2022) |
+| Finalist | Hult Prize Regional Summit, Dhaka (May 2022) |
 | Finalist | MIT E-Cell Idea Validation Competition |
 | Finalist | DTU Udyamee: The Shark Tank Competition |
 
@@ -22,6 +22,7 @@
 - The 4-step refurbishing process, with before/after photos of frames the team restored
 - A working rebuild of the 2022 prescription-matching app prototype ([walkthrough video](docs/specxy-app-walkthrough.mp4))
 - Unit economics: ₹400 cost per pair, sold at ₹500–600 against ₹1,500–1,800 new
+- Certificates from Hult Prize and E-Cell MIT Manipal
 - Team and founder story
 
 ## My role

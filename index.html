@@ -306,7 +306,7 @@ table.awards th{font-family:var(--f-mono);font-weight:500;font-size:.72rem;lette
 table.awards td{padding:20px 16px 20px 0;border-top:1px solid var(--rule);vertical-align:top}
 table.awards td.res{font-family:var(--f-display);font-size:1.25rem;white-space:nowrap}
 table.awards td.res.win{color:var(--blue)}
-table.awards td.y{font-family:var(--f-mono);color:var(--ink-2)}
+table.awards td.y{font-family:var(--f-mono);color:var(--ink-2);white-space:nowrap}
 .road{margin-top:clamp(56px,7vw,88px)}
 .road-line{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
 .road-line::before{content:"";position:absolute;left:0;right:0;top:9px;border-top:1.5px dashed var(--ink-2)}
@@ -319,6 +319,23 @@ table.awards td.y{font-family:var(--f-mono);color:var(--ink-2)}
   .road-line::before{top:0;bottom:0;left:7px;right:auto;border-top:0;border-left:1.5px dashed var(--ink-2)}
   .road-line li{padding:0 0 22px 34px}
 }
+
+/* Certificates */
+.certs{margin-top:clamp(48px,6vw,72px)}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+@media (max-width:860px){ .cert-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .cert-grid{grid-template-columns:1fr} }
+.cert{all:unset;cursor:zoom-in;display:grid;gap:12px;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:12px;transition:transform .2s ease, box-shadow .2s ease}
+.cert:hover{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(20,20,40,.45)}
+.cert:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.cert img{width:100%;height:auto;border-radius:6px;border:1px solid var(--rule);background:#fff}
+.cert-cap{display:grid;gap:2px;font-size:.92rem;color:var(--ink-2);padding:0 4px 4px}
+.cert-cap b{font-family:var(--f-display);font-weight:400;font-size:1.15rem;color:var(--ink)}
+#certDlg{border:0;padding:0;border-radius:14px;background:var(--card);color:var(--ink);max-width:min(1100px,94vw);width:100%}
+#certDlg::backdrop{background:rgba(10,10,14,.72)}
+#certDlg img{width:100%;height:auto;display:block;background:#fff}
+.dlg-bar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 16px;font-size:.92rem;color:var(--ink-2);flex-wrap:wrap}
+.dlg-bar .btn{padding:8px 16px;font-size:.86rem}
 
 /* Team */
 .team{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:16px}
@@ -342,7 +359,7 @@ footer .wrap{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Specxy: a second life for the glasses in your drawer">
-<meta property="og:description" content="Specxy (2022): a refurbished prescription-eyewear marketplace founded by Omkar Patil. Winner, MIT E-Cell x MUTBI Pitch Tank. Runner-up, Hult Prize MAHE.">
+<meta property="og:description" content="Specxy (2022): a refurbished prescription-eyewear marketplace founded by Omkar Patil. Winner, MIT E-Cell x MUTBI Pitch Tank. 1st Runner-up, Hult Prize MAHE.">
 <meta property="og:image" content="https://specxy.netlify.app/og-image.jpg">
 <meta property="og:url" content="https://specxy.netlify.app/">
 <link rel="canonical" href="https://specxy.netlify.app/">
@@ -394,8 +411,8 @@ footer .wrap{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;
 
     <div class="ledger" aria-label="Selected results">
       <div><span class="label accent">Winner</span><span class="what">Pitch Tank</span><span class="note">Manipal Entrepreneurship Summit · MIT E-Cell × MUTBI</span></div>
-      <div><span class="label accent">Runner-up</span><span class="what">Hult Prize MAHE</span><span class="note">On-campus round, Manipal Academy of Higher Education</span></div>
-      <div><span class="label accent">Finalist</span><span class="what">Hult Prize, Dhaka</span><span class="note">Regional Summit 2022 · <a href="#milestones">All five results →</a></span></div>
+      <div><span class="label accent">1st Runner-up</span><span class="what">Hult Prize MAHE</span><span class="note">On-campus round, Manipal Academy of Higher Education · Mar 2022</span></div>
+      <div><span class="label accent">Finalist</span><span class="what">Hult Prize, Dhaka</span><span class="note">Regional Summit, May 2022 · <a href="#certificates">See certificates →</a></span></div>
     </div>
   </div>
 </section>
@@ -698,13 +715,36 @@ footer .wrap{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;
         <thead><tr><th scope="col">Result</th><th scope="col">Competition</th><th scope="col">Organised by</th><th scope="col">Year</th></tr></thead>
         <tbody>
           <tr><td class="res win">Winner</td><td>Pitch Tank, Manipal Entrepreneurship Summit</td><td class="muted">MIT E-Cell × Manipal Universal Technology Business Incubator (MUTBI)</td><td class="y">2022</td></tr>
-          <tr><td class="res win">Runner-up</td><td>Hult Prize MAHE</td><td class="muted">Hult Prize on-campus programme, Manipal Academy of Higher Education</td><td class="y">2022</td></tr>
-          <tr><td class="res">Finalist</td><td>Hult Prize Regional Summit, Dhaka</td><td class="muted">Hult Prize Foundation</td><td class="y">2022</td></tr>
+          <tr><td class="res win">1st Runner-up</td><td>Hult Prize MAHE</td><td class="muted">Hult Prize on-campus programme, Manipal Academy of Higher Education</td><td class="y">Mar 2022</td></tr>
+          <tr><td class="res">Finalist</td><td>Hult Prize Regional Summit, Dhaka</td><td class="muted">Hult Prize Foundation · held 27–28 May 2022</td><td class="y">May 2022</td></tr>
           <tr><td class="res">Finalist</td><td>Idea Validation Competition</td><td class="muted">MIT E-Cell, Manipal</td><td class="y">2022</td></tr>
           <tr><td class="res">Finalist</td><td>Udyamee: The Shark Tank Competition</td><td class="muted">Delhi Technological University (DTU)</td><td class="y">2022</td></tr>
         </tbody>
       </table>
     </div>
+
+    <div class="certs" id="certificates">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><h3 style="font-size:1.6rem">Certificates</h3><span class="tag done">Verified documents</span></div>
+      <div class="cert-grid">
+        <button type="button" class="cert" data-full="assets/cert_hult_mahe.jpg" data-cap="Hult Prize at Manipal Academy of Higher Education: 1st Runner-up team, 15 March 2022">
+          <img src="assets/cert_hult_mahe.jpg" alt="Hult Prize certificate recognising Omkar Patil as a 1st Runner Up team at Hult Prize at Manipal Academy of Higher Education, March 15, 2022" width="1286" height="909">
+          <span class="cert-cap"><b>1st Runner-up</b>Hult Prize MAHE · 15 Mar 2022</span>
+        </button>
+        <button type="button" class="cert" data-full="assets/cert_hult_dhaka.jpg" data-cap="2022 Hult Prize Dhaka Regional Summit, hosted 27–28 May 2022">
+          <img src="assets/cert_hult_dhaka.jpg" alt="Hult Prize certificate recognising Omkar Patil as a competitor in the 2022 Hult Prize Dhaka Regional Summit, May 27 to 28, 2022" width="1289" height="892">
+          <span class="cert-cap"><b>Regional Summit</b>Hult Prize Dhaka · 27–28 May 2022</span>
+        </button>
+        <button type="button" class="cert" data-full="assets/cert_ecell_ivc.jpg" data-cap="E-Cell, MIT Manipal: finalist, Idea Validation Competition">
+          <img src="assets/cert_ecell_ivc.jpg" alt="MIT Manipal E-Cell certificate of appreciation awarded to Specxy for being a finalist in the Idea Validation Competition" width="1286" height="909">
+          <span class="cert-cap"><b>Finalist</b>Idea Validation, E-Cell MIT Manipal</span>
+        </button>
+      </div>
+      <p class="note" style="margin-top:14px">Select a certificate to view it full size.</p>
+    </div>
+    <dialog id="certDlg" aria-label="Certificate">
+      <img id="certImg" src="" alt="">
+      <div class="dlg-bar"><span id="certCap"></span><button type="button" class="btn ghost" id="certClose">Close</button></div>
+    </dialog>
 
     <div class="road">
       <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><h3 style="font-size:1.6rem">The roadmap we pitched</h3><span class="tag">Planned, 2022</span></div>
@@ -785,6 +825,15 @@ const LINKS = { ezbill: "https://ezzbill.com", linkedin: "" };
   const $ = s => document.querySelector(s);
   if (LINKS.ezbill){ $('#ezLink').href = LINKS.ezbill; $('#ezLink').hidden = false; }
   if (LINKS.linkedin){ $('#liLink').href = LINKS.linkedin; $('#liLink').hidden = false; }
+
+  /* Certificates lightbox */
+  const dlg = $('#certDlg');
+  document.querySelectorAll('.cert').forEach(c => c.addEventListener('click', () => {
+    $('#certImg').src = c.dataset.full; $('#certImg').alt = c.querySelector('img').alt; $('#certCap').textContent = c.dataset.cap;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+  }));
+  $('#certClose').addEventListener('click', () => dlg.close ? dlg.close() : dlg.removeAttribute('open'));
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 
   /* Copy email */
   $('#copyBtn').addEventListener('click', () => {
